@@ -11,6 +11,7 @@ import { bindActionCreators } from 'redux';
 import { store } from '../store';
 import { formsValidation } from '../utils/Helpers';
 import GlobalStyle from '../utils/Styles';
+import * as actions from '../actions/IncomingPatientAction';
 import SinglePatientDetail from '../components/SinglePatientDetail';
 import { LineChart, Line, AreaChart, Area, Brush, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
@@ -39,15 +40,20 @@ class PatientContainer extends React.Component {
 
 
   componentDidMount() {
-    let editableBooking;
-    const bookings = store.getState().IncomingPatientReducer.incomingPatient;
-    const paramId = Number(this.props.routeParams.id);
-    bookings.forEach((element) => {
-      if (element.id === paramId) {
-        editableBooking = element;
-      }
-    });
-    this.setState({ booking: editableBooking });
+    this.props.actions.getCurrentPatient();
+    // let editableBooking;
+    // const bookings = store.getState().IncomingPatientReducer.incomingPatient;
+    // const paramId = Number(this.props.routeParams.id);
+    // bookings.forEach((element) => {
+    //   if (element.id === paramId) {
+    //     editableBooking = element;
+    //   }
+    // });
+    // this.setState({ booking: editableBooking });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log('Single patient', nextProps);
   }
 
 
@@ -100,16 +106,15 @@ class PatientContainer extends React.Component {
   }
 
   render() {
-
     const data = [
-      {name: '10', uv: 4000, pv: 9000},
-      {name: '20', uv: 3000, pv: 7222},
-      {name: '30', uv: 2000, pv: 6222},
-      {name: '40', uv: 1223, pv: 5400},
-      {name: '50', uv: 1890, pv: 3200},
-      {name: '60', uv: 2390, pv: 2500},
-      {name: '70', uv: 3490, pv: 1209},
-];
+      { name: '10', uv: 4000, pv: 9000 },
+      { name: '20', uv: 3000, pv: 7222 },
+      { name: '30', uv: 2000, pv: 6222 },
+      { name: '40', uv: 1223, pv: 5400 },
+      { name: '50', uv: 1890, pv: 3200 },
+      { name: '60', uv: 2390, pv: 2500 },
+      { name: '70', uv: 3490, pv: 1209 },
+    ];
 
     const actionsButton = [
       <FlatButton
@@ -136,13 +141,20 @@ class PatientContainer extends React.Component {
       <div id="vehicleContainer">
         <Paper style={GlobalStyle.containerPaperStyle} zDepth={0}>
 
-          <LineChart width={1200} height={200} data={data} syncId="anyId"
-            margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+          <LineChart
+            width={1200}
+            height={200}
+            data={data}
+            syncId="anyId"
+            margin={{
+ top: 10, right: 30, left: 0, bottom: 0,
+}}
+          >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
-            <Line type='monotone' dataKey='uv' stroke='#8884d8' fill='#8884d8' />
+            <Line type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
           </LineChart>
 
 
@@ -153,10 +165,10 @@ class PatientContainer extends React.Component {
         <Grid fluid style={GlobalStyle.containerHeader}>
           <Row>
             <Col xsOffset={8} md={4}>
-              <Link to="/home/admin/dashboard">
+              <Link to="/home/admin/main">
                 <FlatButton label="Back" className="add-button add-button-back float-right" />
               </Link>
-             
+
             </Col>
           </Row>
         </Grid>
@@ -201,7 +213,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    // actions: bindActionCreators("actions", dispatch),
+    actions: bindActionCreators(actions, dispatch),
   };
 }
 

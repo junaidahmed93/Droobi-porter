@@ -33,7 +33,7 @@ class LoginContainer extends Component {
 
   componentWillMount() {
     if (this.props && this.props.user && JSON.stringify(this.props.user) !== '{}') {
-      browserHistory.push('/home/admin/dashboard');
+      browserHistory.push('/home/admin/main');
     }
   }
 
@@ -46,7 +46,7 @@ class LoginContainer extends Component {
         browserHistory.push('/home/remote');
       }
       if (nextProps.user.role.roleType === 'admin') {
-        browserHistory.push('/home/admin/dashboard');
+        browserHistory.push('/home/admin/main');
       }
     }
     if (nextProps && nextProps.error && nextProps.error !== '') {
@@ -125,6 +125,9 @@ class LoginContainer extends Component {
       <div>
         <Grid fluid className="loginGrid">
           <Row className="loginGridRow">
+            <Col xs={0} sm={6} md={7} lg={8}>
+              <div className="MainLogo" />
+            </Col>
             <Col xs={12} sm={6} md={5} lg={4} className="loginGridColLeft">
 
               {this.state.passwordReset ?
@@ -140,9 +143,7 @@ class LoginContainer extends Component {
                 <Login login={this.handleLogin} enableForgetDialog={this.enableForgetDialog} />}
 
             </Col>
-            <Col xs={0} sm={6} md={7} lg={8}>
-              <div className="MainLogo" />
-            </Col>
+
           </Row>
         </Grid>
         <LoaderIndicator />
@@ -167,7 +168,7 @@ function mapStateToProps(state) {
     codeVerify: state.ForgetPasswordReducer.codeVerify,
     resetToken: state.ForgetPasswordReducer.resetToken,
     passwordChanged: state.ForgetPasswordReducer.passwordChanged,
-  
+
   };
 }
 

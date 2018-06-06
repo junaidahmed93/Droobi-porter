@@ -21,7 +21,7 @@ class AverageStats extends Component {
             />
           </div>
           <div className="avg-label">
-            5 mins 45 sec<span className="avg-span">Avg. Job Time</span>
+            5 mins 45 sec<span className="avg-span">Avg Ambulance Arrival</span>
           </div>
         </div>
         <div className="flex-container">
@@ -40,7 +40,7 @@ class AverageStats extends Component {
             />
           </div>
           <div className="avg-label">
-            15 mins 45 sec<span className="avg-span">Avg. Clearence Time</span>
+            15 days<span className="avg-span">Avg. First Aid</span>
           </div>
         </div>
         <div className="flex-container">
@@ -59,7 +59,7 @@ class AverageStats extends Component {
             />
           </div>
           <div className="avg-label">
-            5 mins 45 sec<span className="avg-span">Avg. Batch Time</span>
+            5 mins 45 sec<span className="avg-span">Avg. Pickup Time</span>
           </div>
         </div>
       </div>

@@ -11,15 +11,6 @@ body {
 }
 
 
-canvas {
-  width: 100%;
-  height: 250px;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 0;
-  background:transparent;
-}
 
 #root {
   height: 100%;
@@ -35,12 +26,12 @@ canvas {
 }
 
 .loginGridColLeft {
-  background-image: url("./assets/images/login-screen.jpg");
+  background-image: url("./assets/images/droobi-health.jpg");
   background-repeat: no-repeat;
 }
 .MainLogo {
-  background-image: url("./assets/images/ic_logo.png");
-  background-repeat: no-repeat;
+  background-image: url("./assets/images/droobi_logo.svg");
+  background-repeat: no-repeat; 
   height: 192px;
   width: 385px;
   margin: 37vh auto;
@@ -1106,6 +1097,10 @@ tr.style-row td.action-cell{
 .form-row-spacing{
   /* border: 1px solid pink; */
   height: 70px;
+}
+
+..form-row-spacing-comments {
+  height: 150px;
 }
 .form-col-spacing{
   height: 200px;

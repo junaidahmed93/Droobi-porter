@@ -133,34 +133,35 @@ export function logInUser(user) {
   return (dispatch) => {
     dispatch(loaderActions.loaderStart());
 
-    // let user = {
-    //     user: {
-    //         id: '123',
-    //         roles: [{ id: "5", roleType: 'admin' }],
-    //         name: 'Junaid',
-    //         email: 'junaid.ahmed@venturedive.com',
-    //         emiratesId: '0210',
-    //         lastName: 'ahmed'
-    //     },
-    //     auth: { token: '123333' }
-    // }
-    // console.log("USER", user);
-    // const normalizedUser = normalizeUser(user);
-    // localStorage.setItem('LoggedInUser', JSON.stringify(normalizedUser));
-    // dispatch(loaderActions.loaderStop());
-    // return dispatch(loginSuccess(normalizedUser));
+    const user = {
+      user: {
+        id: '123',
+        roles: [{ id: '5', roleType: 'admin' }],
+        name: 'Junaid',
+        email: 'junaid.ahmed@venturedive.com',
+        emiratesId: '0210',
+        lastName: 'ahmed',
+      },
+      auth: { token: '123333' },
+    };
+    console.log('USER', user);
+    const normalizedUser = normalizeUser(user);
+    localStorage.setItem('LoggedInUser', JSON.stringify(normalizedUser));
+    dispatch(loaderActions.loaderStop());
+    saveState(normalizedUser);
+    return dispatch(loginSuccess(normalizedUser));
 
-    return requestLoginSource(user)
-      .then((res) => {
-        dispatch(loaderActions.loaderStop());
-        console.log('addUserActions response', res);
-        const normalizedUser = normalizeUser(res.data);
-        saveState(normalizedUser);
-        // localStorage.setItem('LoggedInUser', JSON.stringify(normalizedUser));
-        return dispatch(loginSuccess(normalizedUser));
-      })
-      .catch((err) => {
-        dispatch(loaderActions.loaderStop());
-      });
+    // return requestLoginSource(user)
+    //   .then((res) => {
+    //     dispatch(loaderActions.loaderStop());
+    //     console.log('addUserActions response', res);
+    //     const normalizedUser = normalizeUser(res.data);
+    //     saveState(normalizedUser);
+    //     // localStorage.setItem('LoggedInUser', JSON.stringify(normalizedUser));
+    //     return dispatch(loginSuccess(normalizedUser));
+    //   })
+    //   .catch((err) => {
+    //     dispatch(loaderActions.loaderStop());
+    //   });
   };
 }

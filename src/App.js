@@ -11,7 +11,12 @@ import AdminContainer from './containers/AdminContainer';
 import AllPatientsContainer from './containers/AllPatientsContainer';
 import SinglePatientContainer from './containers/SinglePatientContainer';
 import DashboaradContainer from './containers/DashboaradContainer';
-
+import AmbulanceContainer from './containers/AmbulanceContainer';
+import ConfigContainer from './containers/ConfigContainer';
+import HistoryContainer from './containers/HistoryContainer';
+import EnrouteContainer from './containers/EnrouteContainer';
+import SosContainer from './containers/SosContainer';
+import Main from './containers/Main';
 import NotFound from './containers/NotFound';
 // import HttpsRedirect from 'react-https-redirect';
 
@@ -29,7 +34,7 @@ class App extends Component {
     }
     if (nextState.location.pathname === '/home' || nextState.location.pathname === '/home/' || nextState.location.pathname === '/home/hotel' || nextState.location.pathname === '/home/hotel/') {
       replace({
-        pathname: '/home/admin/dashboard',
+        pathname: '/home/admin/main',
       });
     }
   }
@@ -64,9 +69,14 @@ class App extends Component {
                 <IndexRoute component={LoginContainer} />
                 <Route path="/home" component={MainContainer} onEnter={this.requireAuth}>
                   <Route path="admin" component={AdminContainer} onEnter={this.mustAdmin}>
+                    <Route path="main" component={Main} />
                     <Route path="dashboard" component={DashboaradContainer} />
-                    <Route path="patient" component={AllPatientsContainer} />
-                    <Route path="patient/:id" component={SinglePatientContainer} />                    
+                    <Route path="sos" component={SosContainer} />
+                    <Route path="config" component={ConfigContainer} />
+                    <Route path="ambulance" component={AmbulanceContainer} />
+                    <Route path="patient-enroute" component={EnrouteContainer} />
+                    <Route path="patient-history" component={AllPatientsContainer} />
+                    <Route path="patient-history/:id" component={SinglePatientContainer} />
                   </Route>
                 </Route>
                 <Route path="*" component={NotFound} />

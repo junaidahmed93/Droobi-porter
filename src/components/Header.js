@@ -6,6 +6,7 @@ import { browserHistory } from 'react-router';
 import imageUrl from '../assets/images/profile.png';
 import { loadState } from '../utils/StorageUtils';
 import DroobiLogo from '../assets/images/droobi_logo.svg';
+import ProfileAvatar from '../assets/images/avatar.jpeg';
 
 class HeaderMenu extends Component {
   constructor(props) {
@@ -122,7 +123,7 @@ class HeaderMenu extends Component {
         >
           <div >
             <img height="100px" width="100px" src={DroobiLogo} />
-            </div>
+          </div>
         </Menu.Item>
         {this.state.showAll ?
           <Menu
@@ -131,8 +132,8 @@ class HeaderMenu extends Component {
             size="massive"
             className="menu-header border-transparent"
           >
-            <Menu.Item name="Admin" className="menu-header-list" active={activeItem === 'Admin'} onClick={(e) => { this.handleItemClick(e, 'Admin'); }} />
-    
+            <Menu.Item name="Porter View" className="menu-header-list" active={activeItem === 'Admin'} onClick={(e) => { this.handleItemClick(e, 'Admin'); }} />
+
           </Menu>
           : null}
         {this.state.showOnlyHotel ?
@@ -146,14 +147,14 @@ class HeaderMenu extends Component {
           </Menu>
           : null}
 
-     
+
         <Menu.Item
           position="right"
           style={{ paddingBottom: 0, marginRight: 30, cursor: 'pointer' }}
           onClick={this.handleClick}
         >
           <div style={{ display: 'flex', fontWeight: 'bold' }}>
-            <div className="account" > <img alt="profile" height="42px" width="42px" src={(this.onlineUser && this.onlineUser.profileImage) ? this.onlineUser.profileImage : imageUrl} /> </div>
+            <div className="account" > <img alt="profile" height="42px" width="42px" src={ProfileAvatar} /> </div>
             <div style={{ height: 'fit-content', marginTop: 10 }}>
               <div style={{ fontSize: 10 }}>Logged in as</div>
               <div>{loggedUserName}</div>
