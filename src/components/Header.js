@@ -132,7 +132,7 @@ class HeaderMenu extends Component {
             size="massive"
             className="menu-header border-transparent"
           >
-            <Menu.Item name="Porter View" className="menu-header-list" active={activeItem === 'Admin'} onClick={(e) => { this.handleItemClick(e, 'Admin'); }} />
+            <Menu.Item name="In Ambulance" className="menu-header-list" active={activeItem === 'Admin'} onClick={(e) => { this.handleItemClick(e, 'Admin'); }} />
 
           </Menu>
           : null}

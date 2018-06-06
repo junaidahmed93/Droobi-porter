@@ -94,14 +94,14 @@ class Login extends Component {
       <div className="loginPage">
         <div className="loginsection">
           <div className="loginForm">
-            <span style={styles.loginHeading}>Login - Droobi Porter</span>
+            <span style={styles.loginHeading}>Login - Droobi Ambulance</span>
             <br />
             <div>
               <TextField
                 onChange={(e) => { this.onTextFieldChange(e, 'email'); }}
                 floatingLabelStyle={styles.floatingStyle}
-                hintText="Porter Email"
-                floatingLabelText="Porter Email"
+                hintText="Email"
+                floatingLabelText="Email"
                 className="textField"
                 value={this.state.email}
                 autoComplete="new-password"
@@ -129,7 +129,7 @@ class Login extends Component {
               <br />
               <br />
               <RaisedButton
-                label="Porter Login"
+                label="Ambulance Login"
                 onClick={this.handleLogin}
                 style={styles.loginButton}
                 backgroundColor="#27BCBD"

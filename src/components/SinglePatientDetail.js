@@ -6,6 +6,8 @@ import InputEditBox from './shared/forms/InputEditBox';
 import { getAirportFromDeptLoc, getTerminalFromDeptLoc } from '../utils/Helpers';
 import GlobalStyle from '../utils/Styles';
 import statusMapping from '../utils/StatusMapping';
+import LinearProgress from 'material-ui/LinearProgress';
+
 // import InputEditBox from '../shared/forms/InputEditBox';
 export default class incomingPatientEditForm extends React.Component {
   constructor(props) {
@@ -22,6 +24,8 @@ export default class incomingPatientEditForm extends React.Component {
     setInterval(() => {
         this.refresh();
     }, 5000);
+
+    
   }
 
   refresh() {
@@ -43,11 +47,14 @@ export default class incomingPatientEditForm extends React.Component {
     return (
       <div>
         <form className="form-validation">
-          <h2 style={GlobalStyle.formHeadingsh1}>Patient Details: <span style={{ color: '#29ABE2' }}>{incomingPatient.referenceId}</span></h2>
+        
+          <h2 style={GlobalStyle.formHeadingsh1}>Patient Details: </h2>
           <br />
+          <span style={{ color: '#29ABE2', fontSize: '15px' }}>Data Broadcasting...</span>
+          <LinearProgress mode="indeterminate" />
           <Divider className="paper-divider" />
           <Grid fluid>
-            <Row>
+            <Row> 
               <Col md={6}>
 
                 <Grid>

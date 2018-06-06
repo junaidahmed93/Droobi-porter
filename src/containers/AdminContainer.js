@@ -145,7 +145,7 @@ class AdminComponent extends Component {
               </svg>
             </div>
             <div style={{ marginTop: '-28px' }}>
-              <span>Configrations</span>
+              <span>Configurations</span>
             </div>
           </div>
         </MenuItem>
