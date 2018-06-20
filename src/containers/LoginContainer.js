@@ -46,7 +46,7 @@ class LoginContainer extends Component {
         browserHistory.push('/home/remote');
       }
       if (nextProps.user.role.roleType === 'admin') {
-        browserHistory.push('/home/admin/main');
+        browserHistory.push('/home/admin/sos');
       }
     }
     if (nextProps && nextProps.error && nextProps.error !== '') {
