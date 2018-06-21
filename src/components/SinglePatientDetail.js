@@ -170,6 +170,11 @@ export default class incomingPatientEditForm extends React.Component {
                     <Col md={6} > <span style={{fontSize: '30px'}}>{incomingPatient.bloodPressure}</span> </Col>
                   </Row>
 
+                  <Row style={{  height: '50px', padding: '5px', }}>
+                    <Col md={6}> Temprature </Col>
+                    <Col md={6} > <span style={{fontSize: '30px'}}>101</span> </Col>
+                  </Row>
+
                   <Row style={{  height: '50px', padding: '5px' }}>
                     <Col md={6}> Cholestrol </Col>
                     <Col md={6} > <span style={{fontSize: '30px'}}>{incomingPatient.cholestrol}</span> mg/dl </Col>
