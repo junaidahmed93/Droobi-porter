@@ -22,10 +22,8 @@ export default class incomingPatientEditForm extends React.Component {
 
   componentDidMount() {
     setInterval(() => {
-        this.refresh();
+      this.refresh();
     }, 5000);
-
-    
   }
 
   refresh() {
@@ -47,110 +45,110 @@ export default class incomingPatientEditForm extends React.Component {
     return (
       <div>
         <form className="form-validation">
-        
+
           <h2 style={GlobalStyle.formHeadingsh1}>Patient Details: </h2>
           <br />
-          <span style={{ color: '#29ABE2', fontSize: '15px' }}>Data Broadcasting...</span>
-          <LinearProgress mode="indeterminate" />
+          <span style={{ fontSize: '15px', color: '#0D5BD5' }}>Data Broadcasting...</span>
+          <LinearProgress mode="indeterminate" color="#0D5BD5" />
           <Divider className="paper-divider" />
           <Grid fluid>
-            <Row> 
+            <Row>
               <Col md={6}>
 
                 <Grid>
                   <Row style={{ padding: '5px' }}>
                     <Col md={6}>
                       <InputEditBox
-                            id="name"
-                            setValue={setValue}
-                            prefilled={incomingPatient.name}
-                            label="Name"
-                            type="text"
-                            disabled
-                          />
+                        id="name"
+                        setValue={setValue}
+                        prefilled={incomingPatient.name}
+                        label="Name"
+                        type="text"
+                        disabled
+                      />
                     </Col>
                     <Col md={6}>
                       <InputEditBox
-                            id="age"
-                            setValue={setValue}
-                            prefilled={incomingPatient.gender}
-                            label="Age"
-                            type="text"
-                            disabled
-                          />
+                        id="age"
+                        setValue={setValue}
+                        prefilled={incomingPatient.gender}
+                        label="Age"
+                        type="text"
+                        disabled
+                      />
                     </Col>
                   </Row>
 
                   <Row style={{ padding: '5px' }}>
                     <Col md={6}>
                       <InputEditBox
-                            id="gender"
-                            setValue={setValue}
-                            prefilled={incomingPatient.gender}
-                            label="Gender"
-                            type="text"
-                            disabled
-                          />
+                        id="gender"
+                        setValue={setValue}
+                        prefilled={incomingPatient.gender}
+                        label="Gender"
+                        type="text"
+                        disabled
+                      />
                     </Col>
                     <Col md={6}>
                       <InputEditBox
-                            id="bloodgroup"
-                            setValue={setValue}
-                            prefilled={incomingPatient.bloodGroup}
-                            label="Blood Group"
-                            type="text"
-                            disabled
-                          />
+                        id="bloodgroup"
+                        setValue={setValue}
+                        prefilled={incomingPatient.bloodGroup}
+                        label="Blood Group"
+                        type="text"
+                        disabled
+                      />
                     </Col>
                   </Row>
 
                   <Row style={{ padding: '5px' }}>
                     <Col md={6}>
                       <InputEditBox
-                            id="heigth"
-                            setValue={setValue}
-                            prefilled={incomingPatient.height}
-                            label="Height"
-                            type="text"
-                            disabled
-                          />
+                        id="heigth"
+                        setValue={setValue}
+                        prefilled={incomingPatient.height}
+                        label="Height"
+                        type="text"
+                        disabled
+                      />
                     </Col>
                     <Col md={6}>
                       <InputEditBox
-                            id="Weight"
-                            setValue={setValue}
-                            prefilled={incomingPatient.weight}
-                            label="weight"
-                            type="text"
-                            disabled
-                          />
+                        id="Weight"
+                        setValue={setValue}
+                        prefilled={incomingPatient.weight}
+                        label="weight"
+                        type="text"
+                        disabled
+                      />
                     </Col>
                   </Row>
 
-                   <Row style={{ padding: '5px' }}>
+                  <Row style={{ padding: '5px' }}>
                     <Col md={6}>
                       <InputEditBox
-                            id="operated"
-                            setValue={setValue}
-                            prefilled={incomingPatient.operated}
-                            label="Operated"
-                            type="text"
-                            disabled
-                          />
+                        id="operated"
+                        setValue={setValue}
+                        prefilled={incomingPatient.operated}
+                        label="Operated"
+                        type="text"
+                        disabled
+                      />
                     </Col>
                     <Col md={6}>
                       <InputEditBox
-                            id="previousTreatment"
-                            setValue={setValue}
-                            prefilled={incomingPatient.previousTreatment}
-                            label="Previous treatment"
-                            type="text"
-                            disabled
-                          />
+                        id="previousTreatment"
+                        setValue={setValue}
+                        prefilled={incomingPatient.previousTreatment}
+                        label="Previous treatment"
+                        type="text"
+                        disabled
+                      />
                     </Col>
                   </Row>
 
-                
+
                 </Grid>
 
               </Col>
@@ -158,39 +156,37 @@ export default class incomingPatientEditForm extends React.Component {
               <Col md={6}>
 
                 <Grid>
-                    
 
-                  <Row style={{  height: '50px', padding: '5px', marginTop: '20px' }}>
+
+                  <Row style={{ height: '50px', padding: '5px', marginTop: '20px' }}>
                     <Col md={6}> Heartrate </Col>
-                    <Col md={6} style={{ color: `${this.color}`, }}> <span style={{fontSize: '30px'}}>{incomingPatient.heartRate}</span> bpm </Col>
+                    <Col md={6} style={{ color: `${this.color}`, }}> <span style={{ fontSize: '30px' }}>{incomingPatient.heartRate}</span> bpm </Col>
                   </Row>
 
-                  <Row style={{  height: '50px', padding: '5px', }}>
+                  <Row style={{ height: '50px', padding: '5px', }}>
                     <Col md={6}> Blood Pressure </Col>
-                    <Col md={6} > <span style={{fontSize: '30px'}}>{incomingPatient.bloodPressure}</span> </Col>
+                    <Col md={6} > <span style={{ fontSize: '30px' }}>{incomingPatient.bloodPressure}</span> </Col>
                   </Row>
 
-                  <Row style={{  height: '50px', padding: '5px', }}>
+                  <Row style={{ height: '50px', padding: '5px', }}>
                     <Col md={6}> Temprature </Col>
-                    <Col md={6} > <span style={{fontSize: '30px'}}>101</span> </Col>
+                    <Col md={6} > <span style={{ fontSize: '30px' }}>101</span> </Col>
                   </Row>
 
-                  <Row style={{  height: '50px', padding: '5px' }}>
+                  <Row style={{ height: '50px', padding: '5px' }}>
                     <Col md={6}> Cholestrol </Col>
-                    <Col md={6} > <span style={{fontSize: '30px'}}>{incomingPatient.cholestrol}</span> mg/dl </Col>
+                    <Col md={6} > <span style={{ fontSize: '30px' }}>{incomingPatient.cholestrol}</span> mg/dl </Col>
                   </Row>
-
-
                   <Row style={{ padding: '5px' }}>
                     <Col md={6}>blood sugar  </Col>
-                    <Col md={6} > <span style={{fontSize: '30px'}}>{incomingPatient.bloodSugar}</span> mg/dl</Col>
+                    <Col md={6} > <span style={{ fontSize: '30px' }}>{incomingPatient.bloodSugar}</span> mg/dl</Col>
                   </Row>
 
                 </Grid>
               </Col>
             </Row>
           </Grid>
-       
+
           <h2 className="paper-title heading-spacing">First Aid</h2>
           <br />
           <Divider className="paper-divider" />
